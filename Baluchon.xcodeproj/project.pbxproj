@@ -13,6 +13,9 @@
 		CB05FAC0239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */; };
 		CB05FAC1239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */; };
 		CB05FAC2239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */; };
+		CB408F1B24C68546008EC738 /* MeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB408F1A24C68546008EC738 /* MeteoService.swift */; };
+		CB408F1D24C6855C008EC738 /* TraductionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB408F1C24C6855C008EC738 /* TraductionService.swift */; };
+		CB408F1F24C68581008EC738 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB408F1E24C68581008EC738 /* ExchangeRateService.swift */; };
 		CB467BA92384EDC7003C9885 /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB467BA82384EDC7003C9885 /* MeteoViewController.swift */; };
 		CB467BAA2384EDC7003C9885 /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB467BA82384EDC7003C9885 /* MeteoViewController.swift */; };
 		CB467BAB2384EDC7003C9885 /* MeteoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB467BA82384EDC7003C9885 /* MeteoViewController.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		CB05FABB239ECD7600C8DFC2 /* TraductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraductionViewController.swift; sourceTree = "<group>"; };
 		CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
+		CB408F1A24C68546008EC738 /* MeteoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoService.swift; sourceTree = "<group>"; };
+		CB408F1C24C6855C008EC738 /* TraductionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraductionService.swift; sourceTree = "<group>"; };
+		CB408F1E24C68581008EC738 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
 		CB467BA82384EDC7003C9885 /* MeteoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoViewController.swift; sourceTree = "<group>"; };
 		CB8C29E2237E2F93001F2A9D /* Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Baluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB8C29E5237E2F93001F2A9D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +168,9 @@
 		CB8C2A19237E30B1001F2A9D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB408F1A24C68546008EC738 /* MeteoService.swift */,
+				CB408F1C24C6855C008EC738 /* TraductionService.swift */,
+				CB408F1E24C68581008EC738 /* ExchangeRateService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,7 +318,10 @@
 			files = (
 				CB8C29E6237E2F93001F2A9D /* AppDelegate.swift in Sources */,
 				CB05FAC0239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */,
+				CB408F1B24C68546008EC738 /* MeteoService.swift in Sources */,
 				CB05FABC239ECD7600C8DFC2 /* TraductionViewController.swift in Sources */,
+				CB408F1F24C68581008EC738 /* ExchangeRateService.swift in Sources */,
+				CB408F1D24C6855C008EC738 /* TraductionService.swift in Sources */,
 				CB8C29E8237E2F93001F2A9D /* SceneDelegate.swift in Sources */,
 				CB467BA92384EDC7003C9885 /* MeteoViewController.swift in Sources */,
 			);
