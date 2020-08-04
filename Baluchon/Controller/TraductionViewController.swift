@@ -14,20 +14,29 @@ class TraductionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUpTextFieldManager()
     }
-        private func setUpTextFieldManager() {
-            sentenceFrenchTextField.delegate = self
+    @IBAction func traductionButton(_ sender: UIButton) {
+        if sentenceFrenchTextField.text != nil {
+            
+        } else {
+            print("vous n'avez pas de text d'entrer")
+            // TODO: present an alert
         }
-        
     }
+    private func setUpTextFieldManager() {
+        sentenceFrenchTextField.delegate = self
+    }
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        sentenceFrenchTextField.resignFirstResponder()
+    }
+}
 
-    extension TraductionViewController: UITextFieldDelegate {
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
-        }
-    
+extension TraductionViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

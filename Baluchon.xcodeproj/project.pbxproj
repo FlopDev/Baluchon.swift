@@ -27,6 +27,9 @@
 		CB8C29FD237E2F9D001F2A9D /* BaluchonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C29FC237E2F9D001F2A9D /* BaluchonTests.swift */; };
 		CB8C2A08237E2F9D001F2A9D /* BaluchonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8C2A07237E2F9D001F2A9D /* BaluchonUITests.swift */; };
 		CB8C2A17237E2FD2001F2A9D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8C2A16237E2FD2001F2A9D /* Default-568h@2x.png */; };
+		CBE6358824CC9B4A003BD21D /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE6358724CC9B4A003BD21D /* Rate.swift */; };
+		CBE6358A24CC9DD3003BD21D /* Meteo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE6358924CC9DD3003BD21D /* Meteo.swift */; };
+		CBE6358C24CC9DEC003BD21D /* Traduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE6358B24CC9DEC003BD21D /* Traduction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		CB8C2A07237E2F9D001F2A9D /* BaluchonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaluchonUITests.swift; sourceTree = "<group>"; };
 		CB8C2A09237E2F9D001F2A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB8C2A16237E2FD2001F2A9D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CBE6358724CC9B4A003BD21D /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		CBE6358924CC9DD3003BD21D /* Meteo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteo.swift; sourceTree = "<group>"; };
+		CBE6358B24CC9DEC003BD21D /* Traduction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Traduction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +174,11 @@
 		CB8C2A19237E30B1001F2A9D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CBE6358924CC9DD3003BD21D /* Meteo.swift */,
 				CB408F1A24C68546008EC738 /* MeteoService.swift */,
+				CBE6358B24CC9DEC003BD21D /* Traduction.swift */,
 				CB408F1C24C6855C008EC738 /* TraductionService.swift */,
+				CBE6358724CC9B4A003BD21D /* Rate.swift */,
 				CB408F1E24C68581008EC738 /* ExchangeRateService.swift */,
 			);
 			path = Model;
@@ -320,8 +329,11 @@
 				CB05FAC0239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */,
 				CB408F1B24C68546008EC738 /* MeteoService.swift in Sources */,
 				CB05FABC239ECD7600C8DFC2 /* TraductionViewController.swift in Sources */,
+				CBE6358C24CC9DEC003BD21D /* Traduction.swift in Sources */,
+				CBE6358A24CC9DD3003BD21D /* Meteo.swift in Sources */,
 				CB408F1F24C68581008EC738 /* ExchangeRateService.swift in Sources */,
 				CB408F1D24C6855C008EC738 /* TraductionService.swift in Sources */,
+				CBE6358824CC9B4A003BD21D /* Rate.swift in Sources */,
 				CB8C29E8237E2F93001F2A9D /* SceneDelegate.swift in Sources */,
 				CB467BA92384EDC7003C9885 /* MeteoViewController.swift in Sources */,
 			);
