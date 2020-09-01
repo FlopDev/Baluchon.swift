@@ -19,8 +19,11 @@ class ExchangeRateService {
         let task = session.dataTask(with: request) { (data, response, error) in
             if let data = data, error == nil {
                 if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    if let responseJSON = try? JSONDecoder().decode([String: Int].self, from: data), let rate = responseJSON["rates"] {
-                        print(rate)
+                    if let responseJSON = try? JSONDecoder().decode(value.self, from: data) {
+                        print("\(responseJSON.rates)")
+                        // for rate in responseJSON.rates {
+                        //    print(rate)
+                        // }
                     } else {
                         print("prob JSON")
                     }

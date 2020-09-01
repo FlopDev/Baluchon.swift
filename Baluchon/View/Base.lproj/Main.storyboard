@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQI-tR-DyX">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -34,20 +34,20 @@
             <objects>
                 <viewController id="BgM-4Z-dxZ" customClass="TraductionViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iLM-bE-1NU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7hn-eu-Gw8">
-                                <rect key="frame" x="14.5" y="30" width="291" height="184"/>
+                                <rect key="frame" x="19" y="74" width="376" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phrase en Français :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRD-dU-rIO">
-                                        <rect key="frame" x="0.0" y="0.0" width="291" height="26.5"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
-                                        <color key="textColor" red="0.35163027050000001" green="0.69177657370000001" blue="0.78825223450000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="38.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="27"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idW-ya-TSg">
-                                        <rect key="frame" x="0.0" y="36.5" width="291" height="147.5"/>
+                                        <rect key="frame" x="0.0" y="48.333333333333329" width="376" height="241.66666666666669"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         <connections>
@@ -57,16 +57,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-FA-HsZ">
-                                <rect key="frame" x="14.5" y="305" width="291" height="184"/>
+                                <rect key="frame" x="19" y="493" width="376" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction en Anglais :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbh-yF-mT3">
-                                        <rect key="frame" x="0.0" y="0.0" width="291" height="26.5"/>
-                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
-                                        <color key="textColor" red="0.35163027050000001" green="0.69177657370000001" blue="0.78825223450000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="38.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="27"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEA-oG-vyL">
-                                        <rect key="frame" x="0.0" y="36.5" width="291" height="147.5"/>
+                                        <rect key="frame" x="0.0" y="48.333333333333357" width="376" height="241.66666666666663"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
@@ -76,9 +76,9 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-DK-SQe">
-                                <rect key="frame" x="30" y="246" width="260" height="35"/>
+                                <rect key="frame" x="30" y="417.33333333333331" width="354" height="59"/>
                                 <color key="backgroundColor" red="0.13159003850000001" green="0.38511002059999999" blue="0.56765049700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="33"/>
                                 <state key="normal" title="Traduire">
                                     <color key="titleColor" red="0.94743186239999999" green="0.65785527229999996" blue="0.70980525019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
@@ -110,6 +110,7 @@
                     <tabBarItem key="tabBarItem" title="Traduction" image="translate" selectedImage="translate" id="BdZ-U4-jws"/>
                     <connections>
                         <outlet property="sentenceFrenchTextField" destination="idW-ya-TSg" id="4Tw-RV-E9P"/>
+                        <outlet property="traductionButton" destination="bTF-DK-SQe" id="eMA-W3-KGT"/>
                         <outlet property="traductionEnglishTextField" destination="zEA-oG-vyL" id="S0p-jr-4eo"/>
                     </connections>
                 </viewController>
@@ -128,24 +129,24 @@
             <objects>
                 <viewController id="UZf-fY-Fq0" customClass="MeteoViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wJ1-dv-voT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-Py-2XZ">
-                                <rect key="frame" x="112" y="50" width="96" height="113.5"/>
+                                <rect key="frame" x="145" y="94.000000000000014" width="124" height="179.33333333333337"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New-York" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNm-Ut-Vvf">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="28.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="clear" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-xn-hzK">
-                                        <rect key="frame" x="0.0" y="20.5" width="96" height="24.5"/>
+                                        <rect key="frame" x="0.0" y="28.333333333333329" width="124" height="111.99999999999999"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jP-wi-IuL">
-                                        <rect key="frame" x="0.0" y="45" width="96" height="68.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                        <rect key="frame" x="0.0" y="140.33333333333334" width="124" height="39"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="31"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -158,20 +159,20 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-6T-KlH">
-                                <rect key="frame" x="112" y="278" width="96" height="113.5"/>
+                                <rect key="frame" x="145" y="438.33333333333331" width="124" height="179.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parthenay" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zr-Jp-aP9">
-                                        <rect key="frame" x="0.0" y="0.0" width="96" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="28.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-c0-dj5">
-                                        <rect key="frame" x="0.0" y="20.5" width="96" height="24.5"/>
+                                        <rect key="frame" x="0.0" y="28.333333333333371" width="124" height="112"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uN-Sl-UOM">
-                                        <rect key="frame" x="0.0" y="45" width="96" height="68.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="57"/>
+                                        <rect key="frame" x="0.0" y="140.33333333333331" width="124" height="39"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="31"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -203,6 +204,12 @@
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
                         <color key="badgeColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="nameOfCityVisited" destination="LNm-Ut-Vvf" id="uj2-VN-hZc"/>
+                        <outlet property="nameOfMyCity" destination="2zr-Jp-aP9" id="5Og-Wq-KfE"/>
+                        <outlet property="tempOfCityVisited" destination="8jP-wi-IuL" id="KIa-1g-ZEc"/>
+                        <outlet property="tempOfMyCity" destination="5uN-Sl-UOM" id="ZYV-GW-c8s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPP-WS-dlz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -213,32 +220,31 @@
             <objects>
                 <viewController id="Vxe-Sa-Xgt" customClass="ExchangeRateViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XWq-Zf-umo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant en Euro (€) :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do3-YM-rIe">
-                                <rect key="frame" x="30" y="30" width="260" height="26.5"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
-                                <color key="textColor" red="0.95955723520000002" green="0.75636714699999996" blue="0.7843142152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="30" y="74" width="354" height="45.333333333333343"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant en Dollars ($) :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-Po-cve">
-                                <rect key="frame" x="48.5" y="214" width="223.5" height="26.5"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="22"/>
-                                <color key="textColor" red="0.95955723520000002" green="0.75636714699999996" blue="0.7843142152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="34.333333333333343" y="335.66666666666669" width="345.66666666666663" height="45.333333333333314"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mnv-eO-drh">
-                                <rect key="frame" x="75" y="101.5" width="170" height="34"/>
+                                <rect key="frame" x="122" y="152.33333333333334" width="170" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="Fnz-at-sq0"/>
-                                    <constraint firstAttribute="height" constant="34" id="poa-8k-R6n"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iD4-fN-v9D">
-                                <rect key="frame" x="75" y="285.5" width="170" height="34"/>
+                                <rect key="frame" x="122" y="388" width="170" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="2wb-XV-rik"/>
                                 </constraints>
@@ -246,9 +252,9 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyb-Uz-ddX">
-                                <rect key="frame" x="73" y="419" width="174" height="39"/>
-                                <color key="backgroundColor" red="0.97989696260000003" green="0.88570553060000001" blue="0.91372859480000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <rect key="frame" x="82.666666666666671" y="665.66666666666663" width="248.66666666666663" height="62"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="35"/>
                                 <state key="normal" title="Convertir">
                                     <color key="titleColor" red="0.4266274571" green="0.4559246898" blue="0.69806641339999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -264,15 +270,15 @@
                             <constraint firstItem="Do3-YM-rIe" firstAttribute="top" secondItem="Yni-Wa-ZRy" secondAttribute="top" constant="30" id="2Ce-TI-bSY"/>
                             <constraint firstItem="MEr-Po-cve" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="3lO-xw-oqA"/>
                             <constraint firstItem="Do3-YM-rIe" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="AAO-Jx-TKz"/>
-                            <constraint firstItem="iD4-fN-v9D" firstAttribute="top" secondItem="MEr-Po-cve" secondAttribute="bottom" constant="45" id="Aiv-FS-N90"/>
+                            <constraint firstItem="iD4-fN-v9D" firstAttribute="top" secondItem="MEr-Po-cve" secondAttribute="bottom" multiplier="0.9" constant="45" id="Aiv-FS-N90"/>
                             <constraint firstItem="iD4-fN-v9D" firstAttribute="leading" secondItem="Mnv-eO-drh" secondAttribute="leading" id="Brs-Bu-VWW"/>
                             <constraint firstItem="dyb-Uz-ddX" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="D3C-7r-Kpc"/>
                             <constraint firstItem="Mnv-eO-drh" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="IHD-ns-qhc"/>
                             <constraint firstItem="Yni-Wa-ZRy" firstAttribute="bottom" secondItem="dyb-Uz-ddX" secondAttribute="bottom" multiplier="1.09" constant="20" id="UEQ-mi-UaJ"/>
-                            <constraint firstItem="dyb-Uz-ddX" firstAttribute="width" secondItem="XWq-Zf-umo" secondAttribute="width" multiplier="0.54375" id="Z9Q-E0-4jh"/>
+                            <constraint firstItem="dyb-Uz-ddX" firstAttribute="width" secondItem="XWq-Zf-umo" secondAttribute="width" multiplier="0.6" id="Z9Q-E0-4jh"/>
                             <constraint firstItem="Do3-YM-rIe" firstAttribute="leading" secondItem="XWq-Zf-umo" secondAttribute="leading" constant="30" id="flc-gk-Lx1"/>
                             <constraint firstItem="iD4-fN-v9D" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="g5a-16-O5S"/>
-                            <constraint firstItem="Mnv-eO-drh" firstAttribute="top" secondItem="Do3-YM-rIe" secondAttribute="bottom" constant="45" id="p7k-Tx-EqH"/>
+                            <constraint firstItem="Mnv-eO-drh" firstAttribute="top" secondItem="Do3-YM-rIe" secondAttribute="bottom" multiplier="0.9" constant="45" id="p7k-Tx-EqH"/>
                             <constraint firstItem="MEr-Po-cve" firstAttribute="centerY" secondItem="XWq-Zf-umo" secondAttribute="centerY" multiplier="0.8" id="rgJ-bA-pei"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yni-Wa-ZRy"/>
@@ -284,6 +290,7 @@
                     <connections>
                         <outlet property="amountInDollarTextField" destination="iD4-fN-v9D" id="ckZ-ip-h1e"/>
                         <outlet property="amountInEuroTextField" destination="Mnv-eO-drh" id="Idm-Ec-LJK"/>
+                        <outlet property="convertButtonOutlet" destination="dyb-Uz-ddX" id="Ys1-CE-GM3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsd-AN-OJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

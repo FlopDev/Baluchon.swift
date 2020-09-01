@@ -7,3 +7,14 @@
 //
 
 import Foundation
+
+struct data: Codable {
+    
+}
+struct traductionData: Codable {
+    
+}
+
+struct translations: Codable {
+    let translatedText: [String]
+}

@@ -8,10 +8,15 @@
 
 import Foundation
 
-struct Rates: Decodable {
-    var rates: [String : Double]
+struct value: Decodable {
+    let success: String
+    let timestamp: Int
+    let base: String
+    let date: String
+    let rates: Rates
 }
 
-struct USDRate: Decodable {
-    var USD: Rates
+struct Rates: Decodable {
+    var allRates: [String : Double]
 }
+

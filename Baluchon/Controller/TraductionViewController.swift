@@ -11,24 +11,36 @@ import UIKit
 class TraductionViewController: UIViewController {
     @IBOutlet weak var sentenceFrenchTextField: UITextField!
     @IBOutlet weak var traductionEnglishTextField: UITextField!
+    @IBOutlet weak var traductionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         setUpTextFieldManager()
+        traductionButton.layer.cornerRadius = 20
     }
     @IBAction func traductionButton(_ sender: UIButton) {
-        if sentenceFrenchTextField.text != nil {
-            
+        if let sentenceToTraduce = sentenceFrenchTextField.text, sentenceToTraduce.isEmpty == false{
+            TraductionRateService.getTraduction(textToTraduce: sentenceToTraduce)
         } else {
-            print("vous n'avez pas de text d'entrer")
-            // TODO: present an alert
+            presentAlert(title: "Nous n'avons rien à traduire", message: "Veuillez renseigner le(s) mots ou phrase(s) à traduire avant d'appuyer sur le bouton Traduire !")
         }
     }
+    
+    func presentAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     private func setUpTextFieldManager() {
         sentenceFrenchTextField.delegate = self
     }
+    
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         sentenceFrenchTextField.resignFirstResponder()
     }
