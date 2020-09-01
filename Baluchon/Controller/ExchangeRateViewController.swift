@@ -10,7 +10,6 @@ import UIKit
 
 class ExchangeRateViewController: UIViewController {
     
-    
     @IBOutlet weak var amountInEuroTextField: UITextField!
     @IBOutlet weak var convertButtonOutlet: UIButton!
     @IBOutlet weak var amountInDollarTextField: UITextField!
@@ -18,7 +17,6 @@ class ExchangeRateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         setUpTextFieldManager()
         convertButtonOutlet.layer.cornerRadius = 20
         convertButtonOutlet.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)

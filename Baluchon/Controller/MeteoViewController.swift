@@ -10,7 +10,6 @@ import UIKit
 
 class MeteoViewController: UIViewController {
     
-    
     @IBOutlet weak var nameOfCityVisited: UILabel!
     @IBOutlet weak var nameOfMyCity: UILabel!
     @IBOutlet weak var tempOfCityVisited: UILabel!

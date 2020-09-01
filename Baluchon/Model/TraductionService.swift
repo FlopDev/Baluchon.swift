@@ -9,10 +9,12 @@
 import Foundation
 
 class TraductionRateService {
+    
     private static let traductionUrl = URL(string: "https://translation.googleapis.com/language/translate/v2")!
     var textToTraduce: String = ""
     
     static func getTraduction(textToTraduce:String) {
+        
         var request = URLRequest(url: traductionUrl)
         request.httpMethod = "POST"
         let body = "q=\(textToTraduce)&source=fr&target=en&format=text&key=AIzaSyAsKEcSHiBpO0LsVUIqfZU1A709BnxsW8o"
@@ -20,20 +22,20 @@ class TraductionRateService {
         
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in
-            if let data = data, error == nil {
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    if let responseJSON = try? JSONDecoder().decode([String: Int].self, from: data), let traduction = responseJSON["data"] {
-                        print(traduction)
-                    } else {
-                        print("prob JSON")
-                    }
-                    print(data)
-                } else {
-                    print("statut pas bon")
-                }
-            } else {
+            guard let data = data, error == nil else {
                 print("prob data ou erreur")
+                return
             }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("statut pas bon")
+                return
+            }
+            guard let responseJSON = try? JSONDecoder().decode([String: Int].self, from: data), let traduction = responseJSON["data"] else {
+                print("prob JSON")
+                return
+            }
+            print(traduction)
+            print(data)
         }
         task.resume()
     }

@@ -9,6 +9,7 @@
 import Foundation
 
 class MeteoService {
+    
     private static let meteoUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather")!
     
     static func getMeteo(city: String) {
@@ -19,23 +20,22 @@ class MeteoService {
         
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in
-            if let data = data, error == nil {
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    if let responseJSON = try? JSONDecoder().decode(meteo.self, from: data) {
-                        print("\(response.statusCode)")
-                        let descriptionOfWeather = responseJSON.main
-                        let temperature = responseJSON.temp
-                        print("\(descriptionOfWeather) + \(temperature)")
-                    } else {
-                        print("prob JSON")
-                    }
-                } else {
-                    
-                    print("statut pas bon")
-                }
-            } else {
+            guard let data = data, error == nil else {
                 print("prob data ou erreur")
+                return
             }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("statut pas bon")
+                return
+            }
+            guard let responseJSON = try? JSONDecoder().decode(meteo.self, from: data) else {
+                print("prob JSON")
+                return
+            }
+            print("\(response.statusCode)")
+            let descriptionOfWeather = responseJSON.main
+            let temperature = responseJSON.temp
+            print("\(descriptionOfWeather) + \(temperature)")
         }
         task.resume()
     }

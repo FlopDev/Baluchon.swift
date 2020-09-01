@@ -9,6 +9,7 @@
 import Foundation
 
 class ExchangeRateService {
+    
     private static let rateUrl = URL(string: "http://data.fixer.io/api/latest?access_key=cfd185ed15f6519ed2c719bc1a1762c1&=")!
     
     static func getRate() {
@@ -17,23 +18,23 @@ class ExchangeRateService {
         
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { (data, response, error) in
-            if let data = data, error == nil {
-                if let response = response as? HTTPURLResponse, response.statusCode == 200 {
-                    if let responseJSON = try? JSONDecoder().decode(value.self, from: data) {
-                        print("\(responseJSON.rates)")
-                        // for rate in responseJSON.rates {
-                        //    print(rate)
-                        // }
-                    } else {
-                        print("prob JSON")
-                    }
-                    print(data)
-                } else {
-                    print("statut pas bon")
-                }
-            } else {
+            guard let data = data, error == nil else {
                 print("prob data ou erreur")
+                return
             }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("statut pas bon")
+                return
+            }
+            guard let responseJSON = try? JSONDecoder().decode(value.self, from: data) else {
+                print("prob JSON")
+                return
+            }
+            print("\(responseJSON.rates)")
+            // for rate in responseJSON.rates {
+            //    print(rate)
+            // }
+            print(data)
         }
         task.resume()
     }

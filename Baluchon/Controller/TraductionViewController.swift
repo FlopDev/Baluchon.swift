@@ -9,6 +9,7 @@
 import UIKit
 
 class TraductionViewController: UIViewController {
+    
     @IBOutlet weak var sentenceFrenchTextField: UITextField!
     @IBOutlet weak var traductionEnglishTextField: UITextField!
     @IBOutlet weak var traductionButton: UIButton!
@@ -16,7 +17,6 @@ class TraductionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         setUpTextFieldManager()
         traductionButton.layer.cornerRadius = 20
     }
