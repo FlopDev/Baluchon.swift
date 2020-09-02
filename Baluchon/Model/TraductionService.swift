@@ -13,7 +13,7 @@ class TraductionRateService {
     private static let traductionUrl = URL(string: "https://translation.googleapis.com/language/translate/v2")!
     var textToTraduce: String = ""
     
-    static func getTraduction(textToTraduce:String) {
+    static func getTraduction(textToTraduce:String, callback: @escaping (Bool,Traduce?) -> Void) {
         
         var request = URLRequest(url: traductionUrl)
         request.httpMethod = "POST"
@@ -24,18 +24,21 @@ class TraductionRateService {
         let task = session.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 print("prob data ou erreur")
+                callback(false,nil)
                 return
             }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 print("statut pas bon")
+                callback(false,nil)
                 return
             }
-            guard let responseJSON = try? JSONDecoder().decode([String: Int].self, from: data), let traduction = responseJSON["data"] else {
+            guard let responseJSON = try? JSONDecoder().decode(Traduce.self, from: data) else {
                 print("prob JSON")
+                callback(false,nil)
                 return
             }
-            print(traduction)
-            print(data)
+            let traduce = Traduce(data: responseJSON.data)
+            callback(true,traduce)
         }
         task.resume()
     }

@@ -21,8 +21,10 @@ class TraductionViewController: UIViewController {
         traductionButton.layer.cornerRadius = 20
     }
     @IBAction func traductionButton(_ sender: UIButton) {
-        if let sentenceToTraduce = sentenceFrenchTextField.text, sentenceToTraduce.isEmpty == false{
-            TraductionRateService.getTraduction(textToTraduce: sentenceToTraduce)
+        if let sentenceToTraduce = sentenceFrenchTextField.text, sentenceToTraduce.isEmpty == false {
+            TraductionRateService.getTraduction(textToTraduce: sentenceToTraduce) { (sucess, traduce) in
+                print(traduce!.data.translations[0])
+            }
         } else {
             presentAlert(title: "Nous n'avons rien à traduire", message: "Veuillez renseigner le(s) mots ou phrase(s) à traduire avant d'appuyer sur le bouton Traduire !")
         }

@@ -8,13 +8,15 @@
 
 import Foundation
 
-struct data: Codable {
-    
-}
-struct traductionData: Codable {
-    
+
+struct Traduce: Codable {
+    let data: DataClass
 }
 
-struct translations: Codable {
-    let translatedText: [String]
+struct DataClass: Codable {
+    let translations: [Translation]
+}
+
+struct Translation: Codable {
+    let translatedText: String
 }

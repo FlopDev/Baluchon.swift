@@ -18,6 +18,14 @@ class MeteoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        MeteoService.getMeteo(city: "Niort")
+        MeteoService.getMeteo(city: "Niort") { (success, meteo) in
+            print(meteo!.weather)
+            let tempOfOwnCityInCelcius = self.getTempInCelcius(temperatureInKelvin: (meteo?.main.temp)!)
+            print(tempOfOwnCityInCelcius)
+        }
+    }
+    func getTempInCelcius(temperatureInKelvin: Double) -> Double {
+        let temperatureInCelcius = temperatureInKelvin - 273.15
+        return temperatureInCelcius
     }
 }

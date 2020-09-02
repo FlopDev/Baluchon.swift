@@ -8,26 +8,31 @@
 
 import Foundation
 
-struct meteo: Decodable{
-    let main : weatherCondition
-    let temp : tempKalvin
+struct Meteo: Decodable{
+    let weather : [Weather]
+    let main : Main
 }
 
+struct Main: Codable {
+    let temp, feelsLike, tempMin, tempMax: Double
+    let pressure, humidity: Int
 
-struct weatherCondition: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case temp
+        case feelsLike = "feels_like"
+        case tempMin = "temp_min"
+        case tempMax = "temp_max"
+        case pressure, humidity
+    }
+}
+
+struct Weather: Codable {
     let id: Int
-    let main: String
-    // On prend celui ci
-    let description: String
-    // Ou celui la
-    let icon: String
-    
-}
-struct tempKalvin: Decodable {
-    let temp: Double
-    let feels_like: Double
-    let temp_min: Double
-    let temp_max: Double
-    let pressure: Double
-    let humidity: Double
+    let main, weatherDescription, icon: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, main
+        case weatherDescription = "description"
+        case icon
+    }
 }

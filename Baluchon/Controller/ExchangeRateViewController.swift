@@ -30,7 +30,9 @@ class ExchangeRateViewController: UIViewController {
     
     @IBAction func convertButton() {
         if let textToConvert = amountInEuroTextField.text, textToConvert.isEmpty == false {
-            ExchangeRateService.getRate()
+            ExchangeRateService.getRate { (success, value) in
+                print(value!.rates["USD"]!)
+            }
         }
         else {
             presentAlert(title: "Aucun montant renseigné", message: "Veuillez saisir un montant à convertir avant d'appuyer sur le bouton Convertir")
@@ -53,6 +55,7 @@ class ExchangeRateViewController: UIViewController {
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         amountInEuroTextField.resignFirstResponder()
     }
+    
 }
 
 extension ExchangeRateViewController: UITextFieldDelegate {

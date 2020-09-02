@@ -8,15 +8,12 @@
 
 import Foundation
 
-struct value: Decodable {
-    let success: String
+struct Value: Decodable {
+    let success: Bool
     let timestamp: Int
     let base: String
     let date: String
-    let rates: Rates
+    let rates: [String : Double]
 }
 
-struct Rates: Decodable {
-    var allRates: [String : Double]
-}
 

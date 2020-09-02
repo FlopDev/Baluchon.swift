@@ -12,7 +12,7 @@ class ExchangeRateService {
     
     private static let rateUrl = URL(string: "http://data.fixer.io/api/latest?access_key=cfd185ed15f6519ed2c719bc1a1762c1&=")!
     
-    static func getRate() {
+    static func getRate(callback: @escaping(Bool,Value?) -> Void) {
         var request = URLRequest(url: rateUrl)
         request.httpMethod = "POST"
         
@@ -26,15 +26,14 @@ class ExchangeRateService {
                 print("statut pas bon")
                 return
             }
-            guard let responseJSON = try? JSONDecoder().decode(value.self, from: data) else {
+            guard let responseJSON = try? JSONDecoder().decode(Value.self, from: data) else {
                 print("prob JSON")
                 return
             }
-            print("\(responseJSON.rates)")
-            // for rate in responseJSON.rates {
-            //    print(rate)
-            // }
-            print(data)
+            let value = Value(success: true, timestamp: 1, base: "0", date: "0", rates: responseJSON.rates)
+            callback(true,value)
+            // TO DO : Peut etre renvoyer l'index exact dessous dans une var ou en callback
+       
         }
         task.resume()
     }
