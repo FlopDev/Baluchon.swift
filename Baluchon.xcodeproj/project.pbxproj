@@ -13,6 +13,7 @@
 		CB05FAC0239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */; };
 		CB05FAC1239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */; };
 		CB05FAC2239ECD9200C8DFC2 /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */; };
+		CB1F9EDE2506743D009E974E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB1F9EDD2506743D009E974E /* CoreLocation.framework */; };
 		CB408F1B24C68546008EC738 /* MeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB408F1A24C68546008EC738 /* MeteoService.swift */; };
 		CB408F1D24C6855C008EC738 /* TraductionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB408F1C24C6855C008EC738 /* TraductionService.swift */; };
 		CB408F1F24C68581008EC738 /* ExchangeRateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB408F1E24C68581008EC738 /* ExchangeRateService.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		CB05FABB239ECD7600C8DFC2 /* TraductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraductionViewController.swift; sourceTree = "<group>"; };
 		CB05FABF239ECD9200C8DFC2 /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
+		CB1F9EDD2506743D009E974E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		CB408F1A24C68546008EC738 /* MeteoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoService.swift; sourceTree = "<group>"; };
 		CB408F1C24C6855C008EC738 /* TraductionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraductionService.swift; sourceTree = "<group>"; };
 		CB408F1E24C68581008EC738 /* ExchangeRateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateService.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1F9EDE2506743D009E974E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CB1F9EDC2506743D009E974E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CB1F9EDD2506743D009E974E /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB8C29D9237E2F92001F2A9D = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +118,7 @@
 				CB8C29FB237E2F9D001F2A9D /* BaluchonTests */,
 				CB8C2A06237E2F9D001F2A9D /* BaluchonUITests */,
 				CB8C29E3237E2F93001F2A9D /* Products */,
+				CB1F9EDC2506743D009E974E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

@@ -13,6 +13,8 @@ class ExchangeRateViewController: UIViewController {
     @IBOutlet weak var amountInEuroTextField: UITextField!
     @IBOutlet weak var convertButtonOutlet: UIButton!
     @IBOutlet weak var amountInDollarTextField: UITextField!
+    var finalValue = 0.0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,14 @@ class ExchangeRateViewController: UIViewController {
         if let textToConvert = amountInEuroTextField.text, textToConvert.isEmpty == false {
             ExchangeRateService.getRate { (success, value) in
                 print(value!.rates["USD"]!)
+                DispatchQueue.main.async {
+                    if let doubleValueEuro = Double(self.amountInEuroTextField.text!) {
+                        self.finalValue = doubleValueEuro * value!.rates["USD"]!
+                        self.amountInDollarTextField.text = String(self.finalValue)
+                    } else {
+                        print("Not a valid number")
+                    }
+                }
             }
         }
         else {

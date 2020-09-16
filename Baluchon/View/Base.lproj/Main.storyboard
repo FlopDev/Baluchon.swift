@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQI-tR-DyX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQI-tR-DyX">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -33,7 +33,7 @@
         <scene sceneID="cIl-rd-2TW">
             <objects>
                 <viewController id="BgM-4Z-dxZ" customClass="TraductionViewController" customModule="Baluchon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iLM-bE-1NU">
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="iLM-bE-1NU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -77,17 +77,17 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-DK-SQe">
                                 <rect key="frame" x="30" y="417.33333333333331" width="354" height="59"/>
-                                <color key="backgroundColor" red="0.13159003850000001" green="0.38511002059999999" blue="0.56765049700000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3417147398" green="0.41966140270000002" blue="0.50811702010000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="33"/>
                                 <state key="normal" title="Traduire">
-                                    <color key="titleColor" red="0.94743186239999999" green="0.65785527229999996" blue="0.70980525019999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="traductionButton:" destination="BgM-4Z-dxZ" eventType="touchUpInside" id="uFa-7t-Rau"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.95955723520000002" green="0.75636714699999996" blue="0.7843142152" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.80785351989999998" green="0.79581093790000001" blue="0.80784559249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="aQJ-FA-HsZ" firstAttribute="width" secondItem="iLM-bE-1NU" secondAttribute="width" multiplier="0.908" id="0L9-Vc-If8"/>
@@ -110,8 +110,8 @@
                     <tabBarItem key="tabBarItem" title="Traduction" image="translate" selectedImage="translate" id="BdZ-U4-jws"/>
                     <connections>
                         <outlet property="sentenceFrenchTextField" destination="idW-ya-TSg" id="4Tw-RV-E9P"/>
-                        <outlet property="traductionButton" destination="bTF-DK-SQe" id="eMA-W3-KGT"/>
-                        <outlet property="traductionEnglishTextField" destination="zEA-oG-vyL" id="S0p-jr-4eo"/>
+                        <outlet property="traductionButton" destination="bTF-DK-SQe" id="f6g-Wo-mKD"/>
+                        <outlet property="traductionEnglishTextField" destination="zEA-oG-vyL" id="yQF-Rg-sDw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="axn-9o-T0z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,45 +132,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-Py-2XZ">
-                                <rect key="frame" x="145" y="94.000000000000014" width="124" height="179.33333333333337"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-9" translatesAutoresizingMaskIntoConstraints="NO" id="aKs-Py-2XZ">
+                                <rect key="frame" x="82.666666666666671" y="94.000000000000014" width="248.66666666666663" height="179.33333333333337"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New-York" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNm-Ut-Vvf">
-                                        <rect key="frame" x="0.0" y="0.0" width="124" height="28.333333333333332"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrez un nom de ville" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z5v-XW-lXr">
+                                        <rect key="frame" x="0.0" y="0.0" width="248.66666666666666" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="clear" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-xn-hzK">
-                                        <rect key="frame" x="0.0" y="28.333333333333329" width="124" height="111.99999999999999"/>
+                                        <rect key="frame" x="0.0" y="24.999999999999993" width="248.66666666666666" height="124.33333333333331"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="28°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jP-wi-IuL">
-                                        <rect key="frame" x="0.0" y="140.33333333333334" width="124" height="39"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jP-wi-IuL">
+                                        <rect key="frame" x="0.0" y="140.33333333333334" width="248.66666666666666" height="39"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="31"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="8jP-wi-IuL" secondAttribute="bottom" id="BE3-Vu-lLa"/>
-                                    <constraint firstItem="LNm-Ut-Vvf" firstAttribute="leading" secondItem="aKs-Py-2XZ" secondAttribute="leading" id="WpA-HO-eq6"/>
+                                    <constraint firstItem="Z5v-XW-lXr" firstAttribute="top" secondItem="aKs-Py-2XZ" secondAttribute="top" id="P05-Mu-KBK"/>
+                                    <constraint firstItem="Z5v-XW-lXr" firstAttribute="leading" secondItem="aKs-Py-2XZ" secondAttribute="leading" id="Tuh-fi-GO1"/>
                                     <constraint firstItem="8jP-wi-IuL" firstAttribute="leading" secondItem="aKs-Py-2XZ" secondAttribute="leading" id="wxn-do-jhU"/>
-                                    <constraint firstItem="LNm-Ut-Vvf" firstAttribute="top" secondItem="aKs-Py-2XZ" secondAttribute="top" id="yHX-Qx-Eqt"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-6T-KlH">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-9" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-6T-KlH">
                                 <rect key="frame" x="145" y="438.33333333333331" width="124" height="179.33333333333331"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parthenay" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zr-Jp-aP9">
-                                        <rect key="frame" x="0.0" y="0.0" width="124" height="28.333333333333332"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="35.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-c0-dj5">
-                                        <rect key="frame" x="0.0" y="28.333333333333371" width="124" height="112"/>
+                                        <rect key="frame" x="0.0" y="26.666666666666693" width="124" height="122.66666666666669"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uN-Sl-UOM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkU-O5-jIM">
                                         <rect key="frame" x="0.0" y="140.33333333333331" width="124" height="39"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="31"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -179,24 +177,34 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2zr-Jp-aP9" firstAttribute="leading" secondItem="aNw-6T-KlH" secondAttribute="leading" id="2Ur-6S-loV"/>
-                                    <constraint firstAttribute="bottom" secondItem="5uN-Sl-UOM" secondAttribute="bottom" id="2sw-PT-RdL"/>
                                     <constraint firstItem="2zr-Jp-aP9" firstAttribute="top" secondItem="aNw-6T-KlH" secondAttribute="top" id="70k-U7-LPa"/>
-                                    <constraint firstItem="5uN-Sl-UOM" firstAttribute="leading" secondItem="aNw-6T-KlH" secondAttribute="leading" id="D9J-Ys-phN"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-fa-Fxz">
+                                <rect key="frame" x="145" y="303.33333333333331" width="124" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Rechercher">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchCityTemp:" destination="UZf-fY-Fq0" eventType="touchUpInside" id="G6j-4F-IWH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.86773413420000001" green="0.95610982180000004" blue="0.98824232820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="aKs-Py-2XZ" firstAttribute="top" secondItem="bBN-Ti-MFy" secondAttribute="top" constant="50" id="3cq-3w-FPm"/>
                             <constraint firstItem="aKs-Py-2XZ" firstAttribute="centerX" secondItem="wJ1-dv-voT" secondAttribute="centerX" id="GIm-aQ-jNz"/>
+                            <constraint firstItem="XNl-fa-Fxz" firstAttribute="centerX" secondItem="wJ1-dv-voT" secondAttribute="centerX" id="Ijh-gZ-qFj"/>
                             <constraint firstItem="aNw-6T-KlH" firstAttribute="height" secondItem="wJ1-dv-voT" secondAttribute="height" multiplier="0.2" id="Mh1-t8-OuA"/>
-                            <constraint firstItem="aKs-Py-2XZ" firstAttribute="width" secondItem="wJ1-dv-voT" secondAttribute="width" multiplier="0.3" id="Rb4-mT-4Ew"/>
+                            <constraint firstItem="aKs-Py-2XZ" firstAttribute="width" secondItem="wJ1-dv-voT" secondAttribute="width" multiplier="0.6" id="Rb4-mT-4Ew"/>
+                            <constraint firstItem="XNl-fa-Fxz" firstAttribute="top" secondItem="aKs-Py-2XZ" secondAttribute="bottom" constant="30" id="YVs-Jf-NIz"/>
+                            <constraint firstItem="aNw-6T-KlH" firstAttribute="trailing" secondItem="XNl-fa-Fxz" secondAttribute="trailing" id="bhI-vL-kXC"/>
                             <constraint firstItem="aKs-Py-2XZ" firstAttribute="height" secondItem="wJ1-dv-voT" secondAttribute="height" multiplier="0.2" id="iiH-vt-PHI"/>
                             <constraint firstItem="bBN-Ti-MFy" firstAttribute="bottom" secondItem="aNw-6T-KlH" secondAttribute="bottom" multiplier="1.3" constant="10" id="mgL-1H-3UN"/>
                             <constraint firstItem="aNw-6T-KlH" firstAttribute="centerX" secondItem="wJ1-dv-voT" secondAttribute="centerX" id="tnj-f8-DEY"/>
                             <constraint firstItem="aNw-6T-KlH" firstAttribute="width" secondItem="wJ1-dv-voT" secondAttribute="width" multiplier="0.3" id="u3d-e7-h59"/>
-                            <constraint firstItem="aNw-6T-KlH" firstAttribute="leading" secondItem="aKs-Py-2XZ" secondAttribute="leading" id="uvB-ru-qLF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bBN-Ti-MFy"/>
                     </view>
@@ -205,10 +213,13 @@
                         <color key="badgeColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="nameOfCityVisited" destination="LNm-Ut-Vvf" id="uj2-VN-hZc"/>
+                        <outlet property="nameOfCityVisited" destination="Z5v-XW-lXr" id="dfj-iW-IIL"/>
                         <outlet property="nameOfMyCity" destination="2zr-Jp-aP9" id="5Og-Wq-KfE"/>
+                        <outlet property="searchButton" destination="XNl-fa-Fxz" id="PlM-ms-o6m"/>
+                        <outlet property="tempLgoOfCityVisited" destination="qA5-xn-hzK" id="low-ec-3o9"/>
+                        <outlet property="tempLogoOfOwnCity" destination="3sz-c0-dj5" id="gNC-1j-rFf"/>
                         <outlet property="tempOfCityVisited" destination="8jP-wi-IuL" id="KIa-1g-ZEc"/>
-                        <outlet property="tempOfMyCity" destination="5uN-Sl-UOM" id="ZYV-GW-c8s"/>
+                        <outlet property="tempOfMycity" destination="qkU-O5-jIM" id="LRa-hk-S5w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPP-WS-dlz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

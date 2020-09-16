@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Value: Decodable {
+struct Value: Codable {
     let success: Bool
     let timestamp: Int
     let base: String

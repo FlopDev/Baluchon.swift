@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Meteo: Decodable{
+struct Meteo: Codable {
     let weather : [Weather]
     let main : Main
 }

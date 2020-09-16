@@ -14,19 +14,40 @@ class TraductionViewController: UIViewController {
     @IBOutlet weak var traductionEnglishTextField: UITextField!
     @IBOutlet weak var traductionButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpTextFieldManager()
-        traductionButton.layer.cornerRadius = 20
+        sentenceFrenchTextField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        traductionEnglishTextField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        
     }
+    
     @IBAction func traductionButton(_ sender: UIButton) {
-        if let sentenceToTraduce = sentenceFrenchTextField.text, sentenceToTraduce.isEmpty == false {
-            TraductionRateService.getTraduction(textToTraduce: sentenceToTraduce) { (sucess, traduce) in
-                print(traduce!.data.translations[0])
-            }
-        } else {
+        guard let sentenceToTraduce = sentenceFrenchTextField.text, sentenceToTraduce.isEmpty == false else {
             presentAlert(title: "Nous n'avons rien à traduire", message: "Veuillez renseigner le(s) mots ou phrase(s) à traduire avant d'appuyer sur le bouton Traduire !")
+            return
+        }
+        TraductionRateService.getTraduction(textToTraduce: sentenceToTraduce) { (sucess, traduce) in
+            DispatchQueue.main.async {
+                guard sucess == true else {
+                    print("error sucess")
+                    return
+                }
+                guard traduce != nil else {
+                    print("nothing in traduce")
+                    return
+                }
+                guard traduce?.data != nil else {
+                    print("nothing in traduce.data")
+                    return
+                }
+                guard traduce?.data.translations != nil else {
+                    print("nothing in traduce.data.translations")
+                    return
+                }
+                self.traductionEnglishTextField.text = traduce!.data.translations.first?.translatedText
+            }
         }
     }
     

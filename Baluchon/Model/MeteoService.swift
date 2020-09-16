@@ -11,7 +11,7 @@ import Foundation
 class MeteoService {
     
     static func getMeteo(city: String, callback: @escaping (Bool, Meteo?) -> Void) {
-        let meteoUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city)&appid=7c6379add06bf2e4c2a271a9fde9965d")!
+        let meteoUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)&appid=7c6379add06bf2e4c2a271a9fde9965d")!
         
         var request = URLRequest(url: meteoUrl)
         request.httpMethod = "POST"
@@ -37,5 +37,9 @@ class MeteoService {
             callback(true,meteo)
         }
         task.resume()
+    }
+    
+    func staticFuncGetMeteoByID(long: Double, lat: Double) {
+        
     }
 }
