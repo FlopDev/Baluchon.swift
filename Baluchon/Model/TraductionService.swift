@@ -8,20 +8,29 @@
 
 import Foundation
 
-class TraductionRateService {
+class TraductionService {
+
     
     private static let traductionUrl = URL(string: "https://translation.googleapis.com/language/translate/v2")!
+    private var task: URLSessionTask?
+    private var session = URLSession(configuration: .default)
+    
+    init(session: URLSession = URLSession(configuration: .default)) {
+        self.session = session
+    }
+    
+
     var textToTraduce: String = ""
     
-    static func getTraduction(textToTraduce:String, callback: @escaping (Bool,Traduce?) -> Void) {
+    func getTraduction(textToTraduce:String, callback: @escaping (Bool,Traduce?) -> Void) {
         
-        var request = URLRequest(url: traductionUrl)
+        var request = URLRequest(url: TraductionService.traductionUrl)
         request.httpMethod = "POST"
         let body = "q=\(textToTraduce)&source=fr&target=en&format=text&key=AIzaSyAsKEcSHiBpO0LsVUIqfZU1A709BnxsW8o"
         request.httpBody = body.data(using: .utf8)
         
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: request) { (data, response, error) in
+       
+         task = session.dataTask(with: request) { (data, response, error) in
             guard let data = data, error == nil else {
                 print("prob data ou erreur")
                 callback(false,nil)
@@ -40,6 +49,6 @@ class TraductionRateService {
             let traduce = Traduce(data: responseJSON.data)
             callback(true,traduce)
         }
-        task.resume()
+        task?.resume()
     }
 }

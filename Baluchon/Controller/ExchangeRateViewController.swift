@@ -15,6 +15,8 @@ class ExchangeRateViewController: UIViewController {
     @IBOutlet weak var amountInDollarTextField: UITextField!
     var finalValue = 0.0
     
+    let service = ExchangeRateService()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,7 @@ class ExchangeRateViewController: UIViewController {
     
     @IBAction func convertButton() {
         if let textToConvert = amountInEuroTextField.text, textToConvert.isEmpty == false {
-            ExchangeRateService.getRate { (success, value) in
+            service.getRate { (success, value) in
                 print(value!.rates["USD"]!)
                 DispatchQueue.main.async {
                     if let doubleValueEuro = Double(self.amountInEuroTextField.text!) {

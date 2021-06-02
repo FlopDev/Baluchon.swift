@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQI-tR-DyX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VQI-tR-DyX">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="selectedImageTintColor" systemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="BgM-4Z-dxZ" kind="relationship" relationship="viewControllers" id="Fkn-vA-uDr"/>
@@ -41,13 +42,13 @@
                                 <rect key="frame" x="19" y="74" width="376" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phrase en Français :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRD-dU-rIO">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="38.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="27"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="idW-ya-TSg">
-                                        <rect key="frame" x="0.0" y="48.333333333333329" width="376" height="241.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="47" width="376" height="243"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="search"/>
                                         <connections>
@@ -60,13 +61,13 @@
                                 <rect key="frame" x="19" y="493" width="376" height="290"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Traduction en Anglais :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wbh-yF-mT3">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="38.333333333333336"/>
-                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="27"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="37"/>
+                                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="27"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zEA-oG-vyL">
-                                        <rect key="frame" x="0.0" y="48.333333333333357" width="376" height="241.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="47" width="376" height="243"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                         </accessibility>
@@ -75,10 +76,10 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-DK-SQe">
-                                <rect key="frame" x="30" y="417.33333333333331" width="354" height="59"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTF-DK-SQe">
+                                <rect key="frame" x="30" y="384" width="354" height="89"/>
                                 <color key="backgroundColor" red="0.3417147398" green="0.41966140270000002" blue="0.50811702010000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="33"/>
+                                <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="31"/>
                                 <state key="normal" title="Traduire">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -87,6 +88,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="2FC-Kf-LOD"/>
                         <color key="backgroundColor" red="0.80785351989999998" green="0.79581093790000001" blue="0.80784559249999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -99,10 +101,10 @@
                             <constraint firstItem="7hn-eu-Gw8" firstAttribute="height" secondItem="iLM-bE-1NU" secondAttribute="height" multiplier="0.323688" id="Ovh-YQ-MQl"/>
                             <constraint firstItem="7hn-eu-Gw8" firstAttribute="centerX" secondItem="iLM-bE-1NU" secondAttribute="centerX" id="PiC-ca-zNZ"/>
                             <constraint firstItem="bTF-DK-SQe" firstAttribute="centerX" secondItem="iLM-bE-1NU" secondAttribute="centerX" id="XVC-4a-IfE"/>
+                            <constraint firstItem="aQJ-FA-HsZ" firstAttribute="top" secondItem="bTF-DK-SQe" secondAttribute="bottom" constant="20" id="bfA-CV-u9e"/>
                             <constraint firstItem="aQJ-FA-HsZ" firstAttribute="centerX" secondItem="iLM-bE-1NU" secondAttribute="centerX" id="hqh-Ho-HsL"/>
-                            <constraint firstItem="bTF-DK-SQe" firstAttribute="top" secondItem="idW-ya-TSg" secondAttribute="bottom" multiplier="1.2" constant="-4.8000000000000114" id="jXb-mc-mq3"/>
+                            <constraint firstItem="bTF-DK-SQe" firstAttribute="top" secondItem="7hn-eu-Gw8" secondAttribute="bottom" constant="20" id="z4Z-IG-oyA"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2FC-Kf-LOD"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="FJ0-sz-SvG" appends="YES" id="NGb-SS-YAp"/>
                         </connections>
@@ -140,11 +142,11 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="clear" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-xn-hzK">
-                                        <rect key="frame" x="0.0" y="24.999999999999993" width="248.66666666666666" height="124.33333333333331"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="qA5-xn-hzK">
+                                        <rect key="frame" x="0.0" y="25" width="248.66666666666666" height="47"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jP-wi-IuL">
-                                        <rect key="frame" x="0.0" y="140.33333333333334" width="248.66666666666666" height="39"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veuillez rechercher une ville" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jP-wi-IuL">
+                                        <rect key="frame" x="0.0" y="62.999999999999993" width="248.66666666666666" height="116.33333333333331"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="31"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -159,7 +161,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="-9" translatesAutoresizingMaskIntoConstraints="NO" id="aNw-6T-KlH">
                                 <rect key="frame" x="145" y="438.33333333333331" width="124" height="179.33333333333331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Parthenay" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zr-Jp-aP9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chez vous" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zr-Jp-aP9">
                                         <rect key="frame" x="0.0" y="0.0" width="124" height="35.666666666666664"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="25"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -168,7 +170,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="cloud" translatesAutoresizingMaskIntoConstraints="NO" id="3sz-c0-dj5">
                                         <rect key="frame" x="0.0" y="26.666666666666693" width="124" height="122.66666666666669"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkU-O5-jIM">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0°" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkU-O5-jIM">
                                         <rect key="frame" x="0.0" y="140.33333333333331" width="124" height="39"/>
                                         <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="31"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -180,17 +182,19 @@
                                     <constraint firstItem="2zr-Jp-aP9" firstAttribute="top" secondItem="aNw-6T-KlH" secondAttribute="top" id="70k-U7-LPa"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-fa-Fxz">
-                                <rect key="frame" x="145" y="303.33333333333331" width="124" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-fa-Fxz">
+                                <rect key="frame" x="133" y="303.33333333333331" width="148" height="43"/>
+                                <color key="backgroundColor" red="0.32476121190000001" green="0.3998631835" blue="0.48540586229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="26"/>
                                 <state key="normal" title="Rechercher">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="searchCityTemp:" destination="UZf-fY-Fq0" eventType="touchUpInside" id="G6j-4F-IWH"/>
                                 </connections>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bBN-Ti-MFy"/>
                         <color key="backgroundColor" red="0.86773413420000001" green="0.95610982180000004" blue="0.98824232820000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
@@ -200,17 +204,15 @@
                             <constraint firstItem="aNw-6T-KlH" firstAttribute="height" secondItem="wJ1-dv-voT" secondAttribute="height" multiplier="0.2" id="Mh1-t8-OuA"/>
                             <constraint firstItem="aKs-Py-2XZ" firstAttribute="width" secondItem="wJ1-dv-voT" secondAttribute="width" multiplier="0.6" id="Rb4-mT-4Ew"/>
                             <constraint firstItem="XNl-fa-Fxz" firstAttribute="top" secondItem="aKs-Py-2XZ" secondAttribute="bottom" constant="30" id="YVs-Jf-NIz"/>
-                            <constraint firstItem="aNw-6T-KlH" firstAttribute="trailing" secondItem="XNl-fa-Fxz" secondAttribute="trailing" id="bhI-vL-kXC"/>
                             <constraint firstItem="aKs-Py-2XZ" firstAttribute="height" secondItem="wJ1-dv-voT" secondAttribute="height" multiplier="0.2" id="iiH-vt-PHI"/>
                             <constraint firstItem="bBN-Ti-MFy" firstAttribute="bottom" secondItem="aNw-6T-KlH" secondAttribute="bottom" multiplier="1.3" constant="10" id="mgL-1H-3UN"/>
                             <constraint firstItem="aNw-6T-KlH" firstAttribute="centerX" secondItem="wJ1-dv-voT" secondAttribute="centerX" id="tnj-f8-DEY"/>
                             <constraint firstItem="aNw-6T-KlH" firstAttribute="width" secondItem="wJ1-dv-voT" secondAttribute="width" multiplier="0.3" id="u3d-e7-h59"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bBN-Ti-MFy"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Météo" image="cloud.hail" catalog="system" selectedImage="cloud.hail" id="gGX-9b-jdx">
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
-                        <color key="badgeColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <color key="badgeColor" systemColor="scrollViewTexturedBackgroundColor"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="nameOfCityVisited" destination="Z5v-XW-lXr" id="dfj-iW-IIL"/>
@@ -234,38 +236,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant en Euro (€) :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do3-YM-rIe">
-                                <rect key="frame" x="30" y="74" width="354" height="45.333333333333343"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant en Dollars ($) :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-Po-cve">
-                                <rect key="frame" x="34.333333333333343" y="335.66666666666669" width="345.66666666666663" height="45.333333333333314"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mnv-eO-drh">
-                                <rect key="frame" x="122" y="152.33333333333334" width="170" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="Fnz-at-sq0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </textField>
-                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iD4-fN-v9D">
-                                <rect key="frame" x="122" y="388" width="170" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="2wb-XV-rik"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyb-Uz-ddX">
-                                <rect key="frame" x="82.666666666666671" y="665.66666666666663" width="248.66666666666663" height="62"/>
+                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dyb-Uz-ddX">
+                                <rect key="frame" x="82.666666666666671" y="672.66666666666663" width="248.66666666666663" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="35"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="37"/>
                                 <state key="normal" title="Convertir">
                                     <color key="titleColor" red="0.4266274571" green="0.4559246898" blue="0.69806641339999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="titleShadowColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -274,25 +248,55 @@
                                     <action selector="convertButton" destination="Vxe-Sa-Xgt" eventType="touchUpInside" id="Cmf-uh-JHD"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Jcq-su-5j1">
+                                <rect key="frame" x="40" y="64" width="334" height="95.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant en Euro (€) :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Do3-YM-rIe">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="32.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="€" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Mnv-eO-drh">
+                                        <rect key="frame" x="0.0" y="61.666666666666671" width="334" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="NUL-BC-ISH">
+                                <rect key="frame" x="40" y="400.33333333333331" width="334" height="95.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montant en Dollars ($) :" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEr-Po-cve">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="32.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="28"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iD4-fN-v9D">
+                                        <rect key="frame" x="0.0" y="61.666666666666686" width="334" height="34"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yni-Wa-ZRy"/>
                         <color key="backgroundColor" red="0.4266274571" green="0.4559246898" blue="0.69806641339999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Do3-YM-rIe" firstAttribute="top" secondItem="Yni-Wa-ZRy" secondAttribute="top" constant="30" id="2Ce-TI-bSY"/>
-                            <constraint firstItem="MEr-Po-cve" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="3lO-xw-oqA"/>
-                            <constraint firstItem="Do3-YM-rIe" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="AAO-Jx-TKz"/>
-                            <constraint firstItem="iD4-fN-v9D" firstAttribute="top" secondItem="MEr-Po-cve" secondAttribute="bottom" multiplier="0.9" constant="45" id="Aiv-FS-N90"/>
-                            <constraint firstItem="iD4-fN-v9D" firstAttribute="leading" secondItem="Mnv-eO-drh" secondAttribute="leading" id="Brs-Bu-VWW"/>
                             <constraint firstItem="dyb-Uz-ddX" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="D3C-7r-Kpc"/>
-                            <constraint firstItem="Mnv-eO-drh" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="IHD-ns-qhc"/>
+                            <constraint firstItem="Jcq-su-5j1" firstAttribute="top" secondItem="Yni-Wa-ZRy" secondAttribute="top" constant="20" id="M1v-oW-9pX"/>
+                            <constraint firstItem="Jcq-su-5j1" firstAttribute="leading" secondItem="Yni-Wa-ZRy" secondAttribute="leading" constant="40" id="OWB-4b-drB"/>
+                            <constraint firstItem="NUL-BC-ISH" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="Ott-WG-WMi"/>
+                            <constraint firstItem="Jcq-su-5j1" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="QJW-ZF-t8U"/>
                             <constraint firstItem="Yni-Wa-ZRy" firstAttribute="bottom" secondItem="dyb-Uz-ddX" secondAttribute="bottom" multiplier="1.09" constant="20" id="UEQ-mi-UaJ"/>
                             <constraint firstItem="dyb-Uz-ddX" firstAttribute="width" secondItem="XWq-Zf-umo" secondAttribute="width" multiplier="0.6" id="Z9Q-E0-4jh"/>
-                            <constraint firstItem="Do3-YM-rIe" firstAttribute="leading" secondItem="XWq-Zf-umo" secondAttribute="leading" constant="30" id="flc-gk-Lx1"/>
-                            <constraint firstItem="iD4-fN-v9D" firstAttribute="centerX" secondItem="XWq-Zf-umo" secondAttribute="centerX" id="g5a-16-O5S"/>
-                            <constraint firstItem="Mnv-eO-drh" firstAttribute="top" secondItem="Do3-YM-rIe" secondAttribute="bottom" multiplier="0.9" constant="45" id="p7k-Tx-EqH"/>
-                            <constraint firstItem="MEr-Po-cve" firstAttribute="centerY" secondItem="XWq-Zf-umo" secondAttribute="centerY" multiplier="0.8" id="rgJ-bA-pei"/>
+                            <constraint firstItem="NUL-BC-ISH" firstAttribute="centerY" secondItem="XWq-Zf-umo" secondAttribute="centerY" id="eMB-Zw-TIA"/>
+                            <constraint firstItem="NUL-BC-ISH" firstAttribute="leading" secondItem="Yni-Wa-ZRy" secondAttribute="leading" constant="40" id="oVu-rs-aTd"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Yni-Wa-ZRy"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="qFj-gV-jcg" appends="YES" id="rBe-hL-L6e"/>
                         </connections>
@@ -311,14 +315,19 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="678.75" y="-611.61971830985919"/>
+            <point key="canvasLocation" x="678.26086956521749" y="-612.05357142857144"/>
         </scene>
     </scenes>
     <resources>
-        <image name="clear" width="300" height="300"/>
         <image name="cloud" width="300" height="300"/>
         <image name="cloud.hail" catalog="system" width="128" height="125"/>
         <image name="exchangeRate" width="25" height="25"/>
         <image name="translate" width="25" height="25"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

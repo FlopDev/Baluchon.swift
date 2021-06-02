@@ -8,11 +8,16 @@
 
 import UIKit
 
+
 class TraductionViewController: UIViewController {
     
     @IBOutlet weak var sentenceFrenchTextField: UITextField!
     @IBOutlet weak var traductionEnglishTextField: UITextField!
     @IBOutlet weak var traductionButton: UIButton!
+    
+    let service = TraductionService()
+   
+    
     
     
     override func viewDidLoad() {
@@ -28,7 +33,7 @@ class TraductionViewController: UIViewController {
             presentAlert(title: "Nous n'avons rien à traduire", message: "Veuillez renseigner le(s) mots ou phrase(s) à traduire avant d'appuyer sur le bouton Traduire !")
             return
         }
-        TraductionRateService.getTraduction(textToTraduce: sentenceToTraduce) { (sucess, traduce) in
+        service.getTraduction(textToTraduce: sentenceToTraduce) { (sucess, traduce) in
             DispatchQueue.main.async {
                 guard sucess == true else {
                     print("error sucess")

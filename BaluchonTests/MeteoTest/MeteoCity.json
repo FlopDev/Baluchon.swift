@@ -1,0 +1,43 @@
+{
+    "coord": {
+        "lon": 2.3488,
+        "lat": 48.8534
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 289.99,
+        "feels_like": 286.73,
+        "temp_min": 289.15,
+        "temp_max": 290.93,
+        "pressure": 1030,
+        "humidity": 63
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4.63,
+        "deg": 210
+    },
+    "clouds": {
+        "all": 75
+    },
+    "dt": 1614101769,
+    "sys": {
+        "type": 1,
+        "id": 6550,
+        "country": "FR",
+        "sunrise": 1614062658,
+        "sunset": 1614101037
+    },
+    "timezone": 3600,
+    "id": 2988507,
+    "name": "Paris",
+    "cod": 200
+}
