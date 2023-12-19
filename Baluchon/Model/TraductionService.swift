@@ -26,7 +26,7 @@ class TraductionService {
         
         var request = URLRequest(url: TraductionService.traductionUrl)
         request.httpMethod = "POST"
-        let body = "q=\(textToTraduce)&source=fr&target=en&format=text&key=AIzaSyAsKEcSHiBpO0LsVUIqfZU1A709BnxsW8o"
+        let body = "q=\(textToTraduce)&source=fr&target=en&format=text&key=AIzaSyAAWgqjawEpXQslR12yvakIJ1teczTtP8g"
         request.httpBody = body.data(using: .utf8)
         
        
