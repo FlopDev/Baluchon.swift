@@ -9,11 +9,22 @@
 import UIKit
 import CoreLocation
 
+enum MyMeteoState {
+    case loading
+    case refused
+    case received(Int, UIImage)
+}
+
 class MeteoViewController: UIViewController, CLLocationManagerDelegate {
     
     let manager = CLLocationManager()
     let service = MeteoService()
 
+    var myMeteoState: MyMeteoState = .loading {
+        didSet {
+            reloadMyMeteoScreen()
+        }
+    }
     
     @IBOutlet weak var nameOfCityVisited: UITextField!
     @IBOutlet weak var nameOfMyCity: UILabel!
@@ -25,23 +36,42 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
     var userLatitude: CLLocationDegrees?
     var userLongitude: CLLocationDegrees?
     
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
-    
-    // TODO : Maybe find the own city of the user with geolocalisation
     override func viewDidLoad() {
         super.viewDidLoad()
         setupManager()
         searchButton.layer.cornerRadius = 20
         searchButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         manager.desiredAccuracy = kCLLocationAccuracyKilometer
-        
-        
-        // Do any additional setup after loading the view.
-        // TO DO : faire un appel sur la localisation de l'utalisateur (location) et pas sur "Niort"
 
         tcheckAuthorisation()
      
+       // reloadMyMeteoScreen()
+        //myMeteoState = .loading
     }
+    
+    func reloadMyMeteoScreen() {
+            switch myMeteoState {
+                case .loading:
+                   // replace everything by a loader
+                        nameOfMyCity.isHidden = true
+                        tempLogoOfOwnCity.isHidden = true
+                        tempOfMycity.isHidden = true
+                        loader.isHidden = false
+                case .refused:
+                     // replace everything by a message
+                        nameOfMyCity.text = "Veuillez activer la géolocalisation depuis vos réglages."
+                        tempLogoOfOwnCity.isHidden = true
+                        tempOfMycity.isHidden = true
+                case .received(let int, let uIImage):
+                     // display temperature and weather icon
+                        nameOfMyCity.isHidden = false
+                        tempLogoOfOwnCity.isHidden = false
+                        tempOfMycity.isHidden = false
+                        loader.isHidden = true
+                 }
+         }
     
     
     
@@ -92,13 +122,18 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
             switch manager.authorizationStatus {
             case .authorizedAlways:
                 print("Always")
+                
+               // requestMeteo()
             case .authorizedWhenInUse:
                 print("when in use")
+               // requestMeteo()
             case .denied:
+                myMeteoState = .refused
                 print("Denied")
             case .notDetermined:
                 print("NotDetermined")
             case .restricted:
+                myMeteoState = .refused
                 print("Restricted")
             default:
                 print("other")
@@ -106,14 +141,19 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
         } else {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
+                myMeteoState = .refused
                 break
             case .restricted:
+                myMeteoState = .refused
                 break
             case .denied:
+                myMeteoState = .refused
                 break
             case .authorizedAlways:
+                requestMeteo()
                 break
             case .authorizedWhenInUse:
+                requestMeteo()
                 break
             @unknown default:
                 break
@@ -165,6 +205,7 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
     func requestMeteo() {
         if let userLatitude = userLatitude, let userLongitude = userLongitude {
             service.getMeteoGeoLoc(latitude: userLatitude, longitude: userLongitude) { (success, meteo) in
+                print("\(userLatitude) and \(userLongitude)")
                 
                 let tempOfOwnCityInCelcius = Int(self.getTempInCelcius(temperatureInKelvin: (meteo?.main.temp)!))
                
@@ -189,6 +230,21 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
                 self.presentAlert(title: "Erreur", message: "Nous n'avons pas réussi à trouver votre localisation, veuillez réessayer ou rechercher une ville ci-dessus via la barre de recherche !")
             }
         }
+    }
+    
+    private func setUpTextFieldManager() {
+        nameOfCityVisited.delegate = self
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        nameOfCityVisited.resignFirstResponder()
+    }
+}
+
+extension MeteoViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

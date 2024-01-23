@@ -25,6 +25,8 @@ class TraductionViewController: UIViewController {
         setUpTextFieldManager()
         sentenceFrenchTextField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         traductionEnglishTextField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        traductionButton.layer.cornerRadius = 20
+        traductionButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
     }
     
