@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "89BE8D17-9911-460A-A842-32D5C9AE8457"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Baluchon/Controller/MeteoViewController.swift"
@@ -32,15 +32,15 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "230"
             endingLineNumber = "230"
-            landmarkName = "requestMeteo()"
-            landmarkType = "7">
+            landmarkName = "MeteoViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "9240D58F-24EB-4D34-9D5D-0D145B08CB17"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Baluchon/Controller/MeteoViewController.swift"
@@ -48,7 +48,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "229"
             endingLineNumber = "229"
-            landmarkName = "requestMeteo()"
+            landmarkName = "setUpTextFieldManager()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -75,6 +75,36 @@
                   moduleName = "Baluchon"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/florianpeyrony/Desktop/baluchon/Baluchon.swift/Baluchon/Controller/MeteoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "229"
+                  endingLineNumber = "229"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "9240D58F-24EB-4D34-9D5D-0D145B08CB17 - 677c05056ae0094b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Baluchon.MeteoViewController.requestMeteo() -&gt; ()"
+                  moduleName = "Baluchon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/florianpeyrony/Desktop/Baluchon.Final/Baluchon.swift/Baluchon/Controller/MeteoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "229"
+                  endingLineNumber = "229"
+                  offsetFromSymbolStart = "544">
+               </Location>
+               <Location
+                  uuid = "9240D58F-24EB-4D34-9D5D-0D145B08CB17 - 658768a6c6dc2470"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in Baluchon.MeteoViewController.requestMeteo() -&gt; ()"
+                  moduleName = "Baluchon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/florianpeyrony/Desktop/Baluchon.Final/Baluchon.swift/Baluchon/Controller/MeteoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "229"

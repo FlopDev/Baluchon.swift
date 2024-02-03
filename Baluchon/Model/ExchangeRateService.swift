@@ -9,7 +9,6 @@
 import Foundation
 
 class ExchangeRateService {
-    
     private static let rateUrl = URL(string: "http://data.fixer.io/api/latest?access_key=cfd185ed15f6519ed2c719bc1a1762c1&=")!
     var task: URLSessionTask?
     var session = URLSession(configuration: .default)
@@ -17,13 +16,11 @@ class ExchangeRateService {
         self.session = session
     }
 
-    
-    
-       func getRate(callback: @escaping(Bool,Value?) -> Void) {
+    func getRate(callback: @escaping (Bool, Value?) -> Void) {
         var request = URLRequest(url: ExchangeRateService.rateUrl)
         request.httpMethod = "POST"
         
-        task = session.dataTask(with: request) { (data, response, error) in
+        task = session.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print("prob data ou erreur")
                 return
@@ -37,8 +34,7 @@ class ExchangeRateService {
                 return
             }
             let value = Value(success: true, timestamp: 1, base: "0", date: "0", rates: responseJSON.rates)
-            callback(true,value)
-            
+            callback(true, value)
         }
         task?.resume()
     }

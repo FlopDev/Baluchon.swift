@@ -6,17 +6,16 @@
 //  Copyright © 2019 Florian Peyrony. All rights reserved.
 //
 
-import UIKit
 import CoreLocation
+import UIKit
 
 enum MyMeteoState {
     case loading
     case refused
-    case received(Int, UIImage)
+    case received
 }
 
 class MeteoViewController: UIViewController, CLLocationManagerDelegate {
-    
     let manager = CLLocationManager()
     let service = MeteoService()
 
@@ -26,17 +25,17 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    @IBOutlet weak var nameOfCityVisited: UITextField!
-    @IBOutlet weak var nameOfMyCity: UILabel!
-    @IBOutlet weak var tempOfCityVisited: UILabel!
-    @IBOutlet weak var tempOfMycity: UILabel!
-    @IBOutlet weak var searchButton: UIButton!
-    @IBOutlet weak var tempLgoOfCityVisited: UIImageView!
-    @IBOutlet weak var tempLogoOfOwnCity: UIImageView!
+    @IBOutlet var nameOfCityVisited: UITextField!
+    @IBOutlet var nameOfMyCity: UILabel!
+    @IBOutlet var tempOfCityVisited: UILabel!
+    @IBOutlet var tempOfMycity: UILabel!
+    @IBOutlet var searchButton: UIButton!
+    @IBOutlet var tempLgoOfCityVisited: UIImageView!
+    @IBOutlet var tempLogoOfOwnCity: UIImageView!
     var userLatitude: CLLocationDegrees?
     var userLongitude: CLLocationDegrees?
     
-    @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet var loader: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,53 +46,50 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
 
         tcheckAuthorisation()
      
-       // reloadMyMeteoScreen()
-        //myMeteoState = .loading
+        // reloadMyMeteoScreen()
+        // myMeteoState = .loading
     }
     
     func reloadMyMeteoScreen() {
-            switch myMeteoState {
-                case .loading:
-                   // replace everything by a loader
-                        nameOfMyCity.isHidden = true
-                        tempLogoOfOwnCity.isHidden = true
-                        tempOfMycity.isHidden = true
-                        loader.isHidden = false
-                case .refused:
-                     // replace everything by a message
-                        nameOfMyCity.text = "Veuillez activer la géolocalisation depuis vos réglages."
-                        tempLogoOfOwnCity.isHidden = true
-                        tempOfMycity.isHidden = true
-                case .received(let int, let uIImage):
-                     // display temperature and weather icon
-                        nameOfMyCity.isHidden = false
-                        tempLogoOfOwnCity.isHidden = false
-                        tempOfMycity.isHidden = false
-                        loader.isHidden = true
-                 }
-         }
-    
-    
+        switch myMeteoState {
+        case .loading:
+            // replace everything by a loader
+            nameOfMyCity.isHidden = true
+            tempLogoOfOwnCity.isHidden = true
+            tempOfMycity.isHidden = true
+            loader.isHidden = false
+        case .refused:
+            // replace everything by a message
+            nameOfMyCity.text = "Veuillez activer la géolocalisation depuis vos réglages."
+            tempLogoOfOwnCity.isHidden = true
+            tempOfMycity.isHidden = true
+        case .received:
+            // display temperature and weather icon
+            nameOfMyCity.isHidden = false
+            nameOfMyCity.text = "Météo Locale"
+            tempLogoOfOwnCity.isHidden = false
+            tempOfMycity.isHidden = false
+            loader.isHidden = true
+        }
+    }
     
     @IBAction func searchCityTemp(_ sender: Any) {
         if nameOfCityVisited.text != "" {
-            
-            service.getMeteo(city: nameOfCityVisited.text!) { (success, meteo) in
+            service.getMeteo(city: nameOfCityVisited.text!) { success, meteo in
         
                 if success == true {
                     let tempOfCityVisitedInCelcius = Int(self.getTempInCelcius(temperatureInKelvin: (meteo?.main.temp)!))
                     DispatchQueue.main.async {
-                        self.tempOfCityVisited.text = String(tempOfCityVisitedInCelcius)+("°")
+                        self.tempOfCityVisited.text = String(tempOfCityVisitedInCelcius)+"°"
                         let icon = meteo?.weather.first?.icon
 
-                        self.service.getImage(iconNumber: icon!) { (success, data) in
+                        self.service.getImage(iconNumber: icon!) { success, data in
                             DispatchQueue.main.async {
                                 if success == true {
                                     self.tempLgoOfCityVisited.image = UIImage(data: data!)
                                 } else {
                                     self.presentAlert(title: "Erreur", message: "Nous ne trouvons pas d'images associées à votre ville, veuillez réessayer !")
                                 }
-                                
                             }
                         }
                     }
@@ -122,11 +118,8 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
             switch manager.authorizationStatus {
             case .authorizedAlways:
                 print("Always")
-                
-               // requestMeteo()
             case .authorizedWhenInUse:
                 print("when in use")
-               // requestMeteo()
             case .denied:
                 myMeteoState = .refused
                 print("Denied")
@@ -142,16 +135,12 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
             switch CLLocationManager.authorizationStatus() {
             case .notDetermined:
                 myMeteoState = .refused
-                break
             case .restricted:
                 myMeteoState = .refused
-                break
             case .denied:
                 myMeteoState = .refused
-                break
             case .authorizedAlways:
                 requestMeteo()
-                break
             case .authorizedWhenInUse:
                 requestMeteo()
                 break
@@ -160,67 +149,70 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
             }
         }
     }
+
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        //erreur de position
+        // erreur de position
         print(error.localizedDescription)
+        myMeteoState = .refused
     }
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Quand on recoit les nouvelles positions
         if let first = locations.first {
-             let coordinates = first.coordinate
+            let coordinates = first.coordinate
             userLatitude = coordinates.latitude
             userLongitude = coordinates.longitude
             print("Nous avons les coordonnées \(coordinates)")
             requestMeteo()
+            myMeteoState = .received
         }
     }
     
     func presentAlert(title: String, message: String) {
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         // show the alert
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     func getTempInCelcius(temperatureInKelvin: Double) -> Double {
         let temperatureInCelcius = temperatureInKelvin - 273.15
         return temperatureInCelcius
     }
+
     func tcheckAuthorisation() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            manager.requestLocation()
-            setupManager()
+        //
+        switch manager.authorizationStatus {
+        case .restricted, .denied:
+            manager.requestWhenInUseAuthorization()
             
-        }
-        if CLLocationManager.authorizationStatus() == .authorizedAlways {
+        case .authorizedWhenInUse, .authorizedAlways:
             manager.requestLocation()
             setupManager()
-        
-    } else {
+        default:
             manager.requestWhenInUseAuthorization()
         }
     }
+
     func requestMeteo() {
         if let userLatitude = userLatitude, let userLongitude = userLongitude {
-            service.getMeteoGeoLoc(latitude: userLatitude, longitude: userLongitude) { (success, meteo) in
+            service.getMeteoGeoLoc(latitude: userLatitude, longitude: userLongitude) { success, meteo in
                 print("\(userLatitude) and \(userLongitude)")
                 
                 let tempOfOwnCityInCelcius = Int(self.getTempInCelcius(temperatureInKelvin: (meteo?.main.temp)!))
                
                 DispatchQueue.main.async {
-                    self.tempOfMycity.text = String(tempOfOwnCityInCelcius)+("°")
+                    self.tempOfMycity.text = String(tempOfOwnCityInCelcius)+"°"
                     let icon = meteo?.weather.first?.icon
 
-                    self.service.getImage(iconNumber: icon!) { (success, data) in
+                    self.service.getImage(iconNumber: icon!) { success, data in
                         DispatchQueue.main.async {
                             if success == true {
                                 self.tempLogoOfOwnCity.image = UIImage(data: data!)
                             } else {
                                 self.presentAlert(title: "Erreur", message: "Nous ne trouvons pas d'images associées à votre ville, veuillez réessayer !")
                             }
-                            
                         }
                     }
                 }
@@ -246,7 +238,4 @@ extension MeteoViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
 }
-
-

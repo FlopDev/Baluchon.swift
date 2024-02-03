@@ -9,8 +9,8 @@
 import Foundation
 
 struct Meteo: Codable {
-    let weather : [Weather]
-    let main : Main
+    let weather: [Weather]
+    let main: Main
 }
 
 struct Main: Codable {

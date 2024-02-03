@@ -13,7 +13,5 @@ struct Value: Codable {
     let timestamp: Int
     let base: String
     let date: String
-    let rates: [String : Double]
+    let rates: [String: Double]
 }
-
-

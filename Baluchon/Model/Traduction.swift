@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 struct Traduce: Codable {
     let data: DataClass
 }

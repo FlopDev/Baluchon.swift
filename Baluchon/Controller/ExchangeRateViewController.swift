@@ -9,14 +9,12 @@
 import UIKit
 
 class ExchangeRateViewController: UIViewController {
-    
-    @IBOutlet weak var amountInEuroTextField: UITextField!
-    @IBOutlet weak var convertButtonOutlet: UIButton!
-    @IBOutlet weak var amountInDollarTextField: UITextField!
+    @IBOutlet var amountInEuroTextField: UITextField!
+    @IBOutlet var convertButtonOutlet: UIButton!
+    @IBOutlet var amountInDollarTextField: UITextField!
     var finalValue = 0.0
     
     let service = ExchangeRateService()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +27,11 @@ class ExchangeRateViewController: UIViewController {
         amountInDollarTextField.layer.borderWidth = 1
         amountInEuroTextField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         amountInEuroTextField.layer.borderWidth = 1
-        
     }
     
     @IBAction func convertButton() {
         if let textToConvert = amountInEuroTextField.text, textToConvert.isEmpty == false {
-            service.getRate { (success, value) in
+            service.getRate { _, value in
                 print(value!.rates["USD"]!)
                 DispatchQueue.main.async {
                     if let doubleValueEuro = Double(self.amountInEuroTextField.text!) {
@@ -45,19 +42,17 @@ class ExchangeRateViewController: UIViewController {
                     }
                 }
             }
-        }
-        else {
+        } else {
             presentAlert(title: "Aucun montant renseigné", message: "Veuillez saisir un montant à convertir avant d'appuyer sur le bouton Convertir")
         }
     }
     
     func presentAlert(title: String, message: String) {
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         // show the alert
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
     private func setUpTextFieldManager() {
@@ -67,7 +62,6 @@ class ExchangeRateViewController: UIViewController {
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         amountInEuroTextField.resignFirstResponder()
     }
-    
 }
 
 extension ExchangeRateViewController: UITextFieldDelegate {
