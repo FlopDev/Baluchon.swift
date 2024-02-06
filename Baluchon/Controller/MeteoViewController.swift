@@ -201,6 +201,7 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
                     DispatchQueue.main.async {
                         // Si meteo est nul, nous sortons de la méthode ou du bloc
                         self.presentAlert(title: "Aucune connexion internet", message: "Verifier votre connexion internet, nous ne parvenons pas à établir une connexion.")
+                        self.myMeteoState = .refused
                     }
                     return
                 }
@@ -217,6 +218,7 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
                         DispatchQueue.main.async {
                             if success == true {
                                 self.tempLogoOfOwnCity.image = UIImage(data: data!)
+                                self.myMeteoState = .received
                             } else {
                                 self.presentAlert(title: "Erreur", message: "Nous ne trouvons pas d'images associées à votre ville, veuillez réessayer.")
                             }
