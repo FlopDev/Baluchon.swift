@@ -53,26 +53,29 @@ class MeteoService {
         var request = URLRequest(url: meteoUrl)
         request.httpMethod = "POST"
         
-        task = session.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print("prob data ou erreur")
-                callback(false, nil)
-                return
+        DispatchQueue.main.async {
+            
+            self.task = self.session.dataTask(with: request) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("prob data ou erreur")
+                    callback(false, nil)
+                    return
+                }
+                guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                    print("statut pas bon")
+                    callback(false, nil)
+                    return
+                }
+                guard let responseJSON = try? JSONDecoder().decode(Meteo.self, from: data) else {
+                    print("prob JSON")
+                    callback(false, nil)
+                    return
+                }
+                let meteo = Meteo(weather: responseJSON.weather, main: responseJSON.main)
+                callback(true, meteo)
             }
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("statut pas bon")
-                callback(false, nil)
-                return
-            }
-            guard let responseJSON = try? JSONDecoder().decode(Meteo.self, from: data) else {
-                print("prob JSON")
-                callback(false, nil)
-                return
-            }
-            let meteo = Meteo(weather: responseJSON.weather, main: responseJSON.main)
-            callback(true, meteo)
+            self.task?.resume()
         }
-        task?.resume()
     }
     
     func getImage(iconNumber: String, callback: @escaping (Bool, Data?) -> Void) {

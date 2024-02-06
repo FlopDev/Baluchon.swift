@@ -23,14 +23,17 @@ class ExchangeRateService {
         task = session.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 print("prob data ou erreur")
+                callback(false, nil)
                 return
             }
             guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
                 print("statut pas bon")
+                callback(false, nil)
                 return
             }
             guard let responseJSON = try? JSONDecoder().decode(Value.self, from: data) else {
                 print("prob JSON")
+                callback(false, nil)
                 return
             }
             let value = Value(success: true, timestamp: 1, base: "0", date: "0", rates: responseJSON.rates)

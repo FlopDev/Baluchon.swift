@@ -39,32 +39,29 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         setupManager()
         searchButton.layer.cornerRadius = 20
         searchButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         manager.desiredAccuracy = kCLLocationAccuracyKilometer
 
         tcheckAuthorisation()
-     
-        // reloadMyMeteoScreen()
-        // myMeteoState = .loading
     }
     
     func reloadMyMeteoScreen() {
         switch myMeteoState {
         case .loading:
-            // replace everything by a loader
+
             nameOfMyCity.isHidden = true
             tempLogoOfOwnCity.isHidden = true
             tempOfMycity.isHidden = true
             loader.isHidden = false
         case .refused:
-            // replace everything by a message
-            nameOfMyCity.text = "Veuillez activer la géolocalisation depuis vos réglages."
+            nameOfMyCity.text = "Veuillez activer la géolocalisation depuis vos réglages ou verifier votre connexion."
             tempLogoOfOwnCity.isHidden = true
             tempOfMycity.isHidden = true
+            //self.presentAlert(title: "Impossible d'avoir votre localisation", message: "Veuillez verifier votre connexion, ou activer la géolocalisation depuis vos réglages")
         case .received:
-            // display temperature and weather icon
             nameOfMyCity.isHidden = false
             nameOfMyCity.text = "Météo Locale"
             tempLogoOfOwnCity.isHidden = false
@@ -88,20 +85,20 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
                                 if success == true {
                                     self.tempLgoOfCityVisited.image = UIImage(data: data!)
                                 } else {
-                                    self.presentAlert(title: "Erreur", message: "Nous ne trouvons pas d'images associées à votre ville, veuillez réessayer !")
+                                    self.presentAlert(title: "Erreur", message: "Nous ne trouvons pas d'images associées à votre ville, veuillez réessayer.")
                                 }
                             }
                         }
                     }
                 } else {
                     DispatchQueue.main.async {
-                        self.presentAlert(title: "Erreur", message: "Veuillez trouver un nom de ville valide, nous ne trouvons rien de  correspondant, veuillez verifier l'orthographe")
+                        self.presentAlert(title: "Erreur", message: "Veuillez renseigner un nom de ville valide, nous ne trouvons rien de correspondant, veuillez verifier l'orthographe ou encore votre connexion internet.")
                     }
                 }
             }
         } else {
             DispatchQueue.main.async {
-                self.presentAlert(title: "Rien à rechercher", message: "Veuillez rentrer le nom d'une ville avant  d'appuyer sur le  bouton de recherche")
+                self.presentAlert(title: "Rien à rechercher", message: "Veuillez rentrer le nom d'une ville avant d'appuyer sur le bouton de recherche.")
             }
         }
     }
@@ -200,18 +197,28 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
             service.getMeteoGeoLoc(latitude: userLatitude, longitude: userLongitude) { success, meteo in
                 print("\(userLatitude) and \(userLongitude)")
                 
-                let tempOfOwnCityInCelcius = Int(self.getTempInCelcius(temperatureInKelvin: (meteo?.main.temp)!))
-               
+                guard let unwrappedMeteo = meteo else {
+                    DispatchQueue.main.async {
+                        // Si meteo est nul, nous sortons de la méthode ou du bloc
+                        self.presentAlert(title: "Aucune connexion internet", message: "Verifier votre connexion internet, nous ne parvenons pas à établir une connexion.")
+                    }
+                    return
+                }
+                
+                let temperatureKelvin = unwrappedMeteo.main.temp
+                let tempOfOwnCityInCelcius = Int(self.getTempInCelcius(temperatureInKelvin: temperatureKelvin))
+
+
                 DispatchQueue.main.async {
                     self.tempOfMycity.text = String(tempOfOwnCityInCelcius)+"°"
-                    let icon = meteo?.weather.first?.icon
+                    let icon = unwrappedMeteo.weather.first?.icon
 
                     self.service.getImage(iconNumber: icon!) { success, data in
                         DispatchQueue.main.async {
                             if success == true {
                                 self.tempLogoOfOwnCity.image = UIImage(data: data!)
                             } else {
-                                self.presentAlert(title: "Erreur", message: "Nous ne trouvons pas d'images associées à votre ville, veuillez réessayer !")
+                                self.presentAlert(title: "Erreur", message: "Nous ne trouvons pas d'images associées à votre ville, veuillez réessayer.")
                             }
                         }
                     }
@@ -219,7 +226,7 @@ class MeteoViewController: UIViewController, CLLocationManagerDelegate {
             }
         } else {
             DispatchQueue.main.async {
-                self.presentAlert(title: "Erreur", message: "Nous n'avons pas réussi à trouver votre localisation, veuillez réessayer ou rechercher une ville ci-dessus via la barre de recherche !")
+                self.presentAlert(title: "Erreur", message: "Nous n'avons pas réussi à trouver votre localisation, veuillez réessayer ou rechercher une ville ci-dessus via la barre de recherche.")
             }
         }
     }

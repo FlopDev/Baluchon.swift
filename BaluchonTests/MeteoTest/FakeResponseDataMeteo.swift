@@ -31,5 +31,5 @@ class FakeResponseDataMeteo {
     
     static let incorrectMeteoData = "Error".data(using: .utf8)!
     static let incorrectImageData = "image".data(using: .utf8)!
-    static let correctImageData = #imageLiteral(resourceName: "clear").pngData()
+    static let correctImageData = #imageLiteral(resourceName: "baluchon").pngData()
 }

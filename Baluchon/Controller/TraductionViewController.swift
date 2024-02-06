@@ -17,6 +17,7 @@ class TraductionViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        overrideUserInterfaceStyle = .light
         setUpTextFieldManager()
         sentenceFrenchTextField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         traductionEnglishTextField.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -26,13 +27,14 @@ class TraductionViewController: UIViewController {
     
     @IBAction func traductionButton(_ sender: UIButton) {
         guard let sentenceToTraduce = sentenceFrenchTextField.text, sentenceToTraduce.isEmpty == false else {
-            presentAlert(title: "Nous n'avons rien à traduire", message: "Veuillez renseigner le(s) mots ou phrase(s) à traduire avant d'appuyer sur le bouton Traduire !")
+            presentAlert(title: "Nous n'avons rien à traduire", message: "Veuillez renseigner le(s) mots ou phrase(s) à traduire avant d'appuyer sur le bouton Traduire.")
             return
         }
-        service.getTraduction(textToTraduce: sentenceToTraduce) { sucess, traduce in
+        service.getTraduction(textToTraduce: sentenceToTraduce) { success, traduce in
             DispatchQueue.main.async {
-                guard sucess == true else {
+                guard success == true else {
                     print("error sucess")
+                    self.presentAlert(title: "Aucune connexion internet", message: "Verifier votre connexion internet, nous ne parvenons pas à établir une connexion.")
                     return
                 }
                 guard traduce != nil else {

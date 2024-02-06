@@ -18,7 +18,7 @@ class ExchangeRateViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        overrideUserInterfaceStyle = .light
         setUpTextFieldManager()
         convertButtonOutlet.layer.cornerRadius = 20
         convertButtonOutlet.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
@@ -31,21 +31,29 @@ class ExchangeRateViewController: UIViewController {
     
     @IBAction func convertButton() {
         if let textToConvert = amountInEuroTextField.text, textToConvert.isEmpty == false {
-            service.getRate { _, value in
-                print(value!.rates["USD"]!)
+
+            
+            service.getRate { success, value in
                 DispatchQueue.main.async {
-                    if let doubleValueEuro = Double(self.amountInEuroTextField.text!) {
-                        self.finalValue = doubleValueEuro * value!.rates["USD"]!
-                        self.amountInDollarTextField.text = String(self.finalValue)
-                    } else {
-                        print("Not a valid number")
+                guard let value = value, success == true else {
+                    self.presentAlert(title: "Erreur", message: "Verifier d'avoir un acccès a internet, ou d'avoir bien renseigné un chiffre/nombre")
+                    return
+                }
+                
+                    guard let doubleValueEuro = Double(self.amountInEuroTextField.text!) else {
+                        self.presentAlert(title: "Aucun nombre/chiffre trouvé", message: "Veuillez renseigner un montant à convertir")
+                        return
+                        
                     }
+                    self.finalValue = doubleValueEuro * value.rates["USD"]!
+                    self.amountInDollarTextField.text = String(self.finalValue)
                 }
             }
-        } else {
-            presentAlert(title: "Aucun montant renseigné", message: "Veuillez saisir un montant à convertir avant d'appuyer sur le bouton Convertir")
+            //
         }
     }
+    
+    
     
     func presentAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
